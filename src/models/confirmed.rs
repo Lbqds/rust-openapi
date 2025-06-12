@@ -23,19 +23,16 @@ pub struct Confirmed {
     pub from_group_confirmations: i32,
     #[serde(rename = "toGroupConfirmations")]
     pub to_group_confirmations: i32,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl Confirmed {
-    pub fn new(block_hash: String, tx_index: i32, chain_confirmations: i32, from_group_confirmations: i32, to_group_confirmations: i32, r#type: String) -> Confirmed {
+    pub fn new(block_hash: String, tx_index: i32, chain_confirmations: i32, from_group_confirmations: i32, to_group_confirmations: i32) -> Confirmed {
         Confirmed {
             block_hash,
             tx_index,
             chain_confirmations,
             from_group_confirmations,
             to_group_confirmations,
-            r#type,
         }
     }
 }

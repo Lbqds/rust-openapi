@@ -15,16 +15,11 @@ use serde::{Deserialize, Serialize};
 pub struct ValAddress {
     #[serde(rename = "value")]
     pub value: String,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl ValAddress {
-    pub fn new(value: String, r#type: String) -> ValAddress {
-        ValAddress {
-            value,
-            r#type,
-        }
+    pub fn new(value: String) -> ValAddress {
+        ValAddress { value }
     }
 }
 

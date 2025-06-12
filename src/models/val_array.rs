@@ -15,16 +15,11 @@ use serde::{Deserialize, Serialize};
 pub struct ValArray {
     #[serde(rename = "value")]
     pub value: Vec<models::Val>,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl ValArray {
-    pub fn new(value: Vec<models::Val>, r#type: String) -> ValArray {
-        ValArray {
-            value,
-            r#type,
-        }
+    pub fn new(value: Vec<models::Val>) -> ValArray {
+        ValArray { value }
     }
 }
 

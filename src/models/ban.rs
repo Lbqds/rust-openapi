@@ -15,16 +15,11 @@ use serde::{Deserialize, Serialize};
 pub struct Ban {
     #[serde(rename = "peers")]
     pub peers: Vec<String>,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl Ban {
-    pub fn new(peers: Vec<String>, r#type: String) -> Ban {
-        Ban {
-            peers,
-            r#type,
-        }
+    pub fn new(peers: Vec<String>) -> Ban {
+        Ban { peers }
     }
 }
 

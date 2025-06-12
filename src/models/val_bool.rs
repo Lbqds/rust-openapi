@@ -15,16 +15,11 @@ use serde::{Deserialize, Serialize};
 pub struct ValBool {
     #[serde(rename = "value")]
     pub value: bool,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl ValBool {
-    pub fn new(value: bool, r#type: String) -> ValBool {
-        ValBool {
-            value,
-            r#type,
-        }
+    pub fn new(value: bool) -> ValBool {
+        ValBool { value }
     }
 }
 

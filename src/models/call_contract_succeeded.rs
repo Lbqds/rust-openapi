@@ -27,12 +27,10 @@ pub struct CallContractSucceeded {
     pub events: Vec<models::ContractEventByTxId>,
     #[serde(rename = "debugMessages")]
     pub debug_messages: Vec<models::DebugMessage>,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl CallContractSucceeded {
-    pub fn new(returns: Vec<models::Val>, gas_used: i32, contracts: Vec<models::ContractState>, tx_inputs: Vec<String>, tx_outputs: Vec<models::Output>, events: Vec<models::ContractEventByTxId>, debug_messages: Vec<models::DebugMessage>, r#type: String) -> CallContractSucceeded {
+    pub fn new(returns: Vec<models::Val>, gas_used: i32, contracts: Vec<models::ContractState>, tx_inputs: Vec<String>, tx_outputs: Vec<models::Output>, events: Vec<models::ContractEventByTxId>, debug_messages: Vec<models::DebugMessage>) -> CallContractSucceeded {
         CallContractSucceeded {
             returns,
             gas_used,
@@ -41,7 +39,6 @@ impl CallContractSucceeded {
             tx_outputs,
             events,
             debug_messages,
-            r#type,
         }
     }
 }

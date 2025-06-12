@@ -27,12 +27,10 @@ pub struct AssetOutput {
     pub lock_time: i64,
     #[serde(rename = "message")]
     pub message: String,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl AssetOutput {
-    pub fn new(hint: i32, key: String, atto_alph_amount: String, address: String, tokens: Vec<models::Token>, lock_time: i64, message: String, r#type: String) -> AssetOutput {
+    pub fn new(hint: i32, key: String, atto_alph_amount: String, address: String, tokens: Vec<models::Token>, lock_time: i64, message: String) -> AssetOutput {
         AssetOutput {
             hint,
             key,
@@ -41,7 +39,6 @@ impl AssetOutput {
             tokens,
             lock_time,
             message,
-            r#type,
         }
     }
 }

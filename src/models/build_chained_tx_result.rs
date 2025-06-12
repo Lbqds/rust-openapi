@@ -14,11 +14,11 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[serde(tag = "type")]
 pub enum BuildChainedTxResult {
-    #[serde(rename="BuildChainedDeployContractTxResult")]
+    #[serde(rename="DeployContract")]
     BuildChainedDeployContractTxResult(Box<models::BuildChainedDeployContractTxResult>),
-    #[serde(rename="BuildChainedExecuteScriptTxResult")]
+    #[serde(rename="ExecuteScript")]
     BuildChainedExecuteScriptTxResult(Box<models::BuildChainedExecuteScriptTxResult>),
-    #[serde(rename="BuildChainedTransferTxResult")]
+    #[serde(rename="Transfer")]
     BuildChainedTransferTxResult(Box<models::BuildChainedTransferTxResult>),
 }
 

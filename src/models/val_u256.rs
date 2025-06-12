@@ -15,16 +15,11 @@ use serde::{Deserialize, Serialize};
 pub struct ValU256 {
     #[serde(rename = "value")]
     pub value: String,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl ValU256 {
-    pub fn new(value: String, r#type: String) -> ValU256 {
-        ValU256 {
-            value,
-            r#type,
-        }
+    pub fn new(value: String) -> ValU256 {
+        ValU256 { value }
     }
 }
 

@@ -15,16 +15,11 @@ use serde::{Deserialize, Serialize};
 pub struct Penalty {
     #[serde(rename = "value")]
     pub value: i32,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl Penalty {
-    pub fn new(value: i32, r#type: String) -> Penalty {
-        Penalty {
-            value,
-            r#type,
-        }
+    pub fn new(value: i32) -> Penalty {
+        Penalty { value }
     }
 }
 

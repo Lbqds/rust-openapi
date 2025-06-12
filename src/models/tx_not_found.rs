@@ -12,16 +12,11 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct TxNotFound {
-    #[serde(rename = "type")]
-    pub r#type: String,
-}
+pub struct TxNotFound;
 
 impl TxNotFound {
-    pub fn new(r#type: String) -> TxNotFound {
-        TxNotFound {
-            r#type,
-        }
+    pub fn new() -> TxNotFound {
+        TxNotFound
     }
 }
 

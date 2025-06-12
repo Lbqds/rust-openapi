@@ -15,16 +15,11 @@ use serde::{Deserialize, Serialize};
 pub struct Reachable {
     #[serde(rename = "peers")]
     pub peers: Vec<String>,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl Reachable {
-    pub fn new(peers: Vec<String>, r#type: String) -> Reachable {
-        Reachable {
-            peers,
-            r#type,
-        }
+    pub fn new(peers: Vec<String>) -> Reachable {
+        Reachable { peers }
     }
 }
 

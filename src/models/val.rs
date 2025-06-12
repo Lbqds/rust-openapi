@@ -14,17 +14,17 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[serde(tag = "type")]
 pub enum Val {
-    #[serde(rename="ValAddress")]
+    #[serde(rename="Address")]
     ValAddress(Box<models::ValAddress>),
-    #[serde(rename="ValArray")]
+    #[serde(rename="Array")]
     ValArray(Box<models::ValArray>),
-    #[serde(rename="ValBool")]
+    #[serde(rename="Bool")]
     ValBool(Box<models::ValBool>),
-    #[serde(rename="ValByteVec")]
+    #[serde(rename="ByteVec")]
     ValByteVec(Box<models::ValByteVec>),
-    #[serde(rename="ValI256")]
+    #[serde(rename="I256")]
     ValI256(Box<models::ValI256>),
-    #[serde(rename="ValU256")]
+    #[serde(rename="U256")]
     ValU256(Box<models::ValU256>),
 }
 

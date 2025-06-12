@@ -15,16 +15,11 @@ use serde::{Deserialize, Serialize};
 pub struct Banned {
     #[serde(rename = "until")]
     pub until: i64,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl Banned {
-    pub fn new(until: i64, r#type: String) -> Banned {
-        Banned {
-            until,
-            r#type,
-        }
+    pub fn new(until: i64) -> Banned {
+        Banned { until }
     }
 }
 

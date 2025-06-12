@@ -24,7 +24,7 @@ pub enum TxStatus {
 
 impl Default for TxStatus {
     fn default() -> Self {
-        Self::Confirmed(Default::default())
+        Self::TxNotFound(Default::default())
     }
 }
 

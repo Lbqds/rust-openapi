@@ -15,16 +15,11 @@ use serde::{Deserialize, Serialize};
 pub struct ValByteVec {
     #[serde(rename = "value")]
     pub value: String,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl ValByteVec {
-    pub fn new(value: String, r#type: String) -> ValByteVec {
-        ValByteVec {
-            value,
-            r#type,
-        }
+    pub fn new(value: String) -> ValByteVec {
+        ValByteVec { value }
     }
 }
 

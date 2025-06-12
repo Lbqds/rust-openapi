@@ -15,16 +15,11 @@ use serde::{Deserialize, Serialize};
 pub struct CallContractFailed {
     #[serde(rename = "error")]
     pub error: String,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl CallContractFailed {
-    pub fn new(error: String, r#type: String) -> CallContractFailed {
-        CallContractFailed {
-            error,
-            r#type,
-        }
+    pub fn new(error: String) -> CallContractFailed {
+        CallContractFailed { error }
     }
 }
 

@@ -23,19 +23,16 @@ pub struct ContractOutput {
     pub address: String,
     #[serde(rename = "tokens")]
     pub tokens: Vec<models::Token>,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl ContractOutput {
-    pub fn new(hint: i32, key: String, atto_alph_amount: String, address: String, tokens: Vec<models::Token>, r#type: String) -> ContractOutput {
+    pub fn new(hint: i32, key: String, atto_alph_amount: String, address: String, tokens: Vec<models::Token>) -> ContractOutput {
         ContractOutput {
             hint,
             key,
             atto_alph_amount,
             address,
             tokens,
-            r#type,
         }
     }
 }

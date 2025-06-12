@@ -15,16 +15,11 @@ use serde::{Deserialize, Serialize};
 pub struct BuildChainedTransferTx {
     #[serde(rename = "value")]
     pub value: Box<models::BuildTransferTx>,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl BuildChainedTransferTx {
-    pub fn new(value: models::BuildTransferTx, r#type: String) -> BuildChainedTransferTx {
-        BuildChainedTransferTx {
-            value: Box::new(value),
-            r#type,
-        }
+    pub fn new(value: models::BuildTransferTx) -> BuildChainedTransferTx {
+        BuildChainedTransferTx { value: Box::new(value) }
     }
 }
 

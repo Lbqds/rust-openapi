@@ -15,16 +15,11 @@ use serde::{Deserialize, Serialize};
 pub struct BuildChainedExecuteScriptTxResult {
     #[serde(rename = "value")]
     pub value: Box<models::BuildSimpleExecuteScriptTxResult>,
-    #[serde(rename = "type")]
-    pub r#type: String,
 }
 
 impl BuildChainedExecuteScriptTxResult {
-    pub fn new(value: models::BuildSimpleExecuteScriptTxResult, r#type: String) -> BuildChainedExecuteScriptTxResult {
-        BuildChainedExecuteScriptTxResult {
-            value: Box::new(value),
-            r#type,
-        }
+    pub fn new(value: models::BuildSimpleExecuteScriptTxResult) -> BuildChainedExecuteScriptTxResult {
+        BuildChainedExecuteScriptTxResult { value: Box::new(value) }
     }
 }
 

@@ -12,16 +12,11 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct MemPooled {
-    #[serde(rename = "type")]
-    pub r#type: String,
-}
+pub struct MemPooled;
 
 impl MemPooled {
-    pub fn new(r#type: String) -> MemPooled {
-        MemPooled {
-            r#type,
-        }
+    pub fn new() -> MemPooled {
+        MemPooled
     }
 }
 
