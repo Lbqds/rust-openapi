@@ -15,7 +15,7 @@ use serde::{Deserialize, Serialize};
 #[serde(tag = "type")]
 pub enum CallContractResult {
     #[serde(rename="CallContractFailed")]
-    CallContractFailed(Box<models::CallContractFailed>),
+    CallContractFailed(models::CallContractFailed),
     #[serde(rename="CallContractSucceeded")]
     CallContractSucceeded(Box<models::CallContractSucceeded>),
 }

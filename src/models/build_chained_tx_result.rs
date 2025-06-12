@@ -12,14 +12,14 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-#[serde(tag = "type")]
+#[serde(tag = "type", content = "value")]
 pub enum BuildChainedTxResult {
     #[serde(rename="DeployContract")]
-    BuildChainedDeployContractTxResult(Box<models::BuildChainedDeployContractTxResult>),
+    BuildChainedDeployContractTxResult(Box<models::BuildSimpleDeployContractTxResult>),
     #[serde(rename="ExecuteScript")]
-    BuildChainedExecuteScriptTxResult(Box<models::BuildChainedExecuteScriptTxResult>),
+    BuildChainedExecuteScriptTxResult(Box<models::BuildSimpleExecuteScriptTxResult>),
     #[serde(rename="Transfer")]
-    BuildChainedTransferTxResult(Box<models::BuildChainedTransferTxResult>),
+    BuildChainedTransferTxResult(Box<models::BuildSimpleTransferTxResult>),
 }
 
 impl Default for BuildChainedTxResult {

@@ -12,12 +12,12 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-#[serde(tag = "type")]
+#[serde(tag = "type", content = "peers")]
 pub enum MisbehaviorAction {
     #[serde(rename="Ban")]
-    Ban(Box<models::Ban>),
+    Ban(Vec<String>),
     #[serde(rename="Unban")]
-    Unban(Box<models::Unban>),
+    Unban(Vec<String>),
 }
 
 impl Default for MisbehaviorAction {

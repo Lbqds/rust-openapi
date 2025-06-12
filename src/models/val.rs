@@ -12,20 +12,20 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-#[serde(tag = "type")]
+#[serde(tag = "type", content = "value")]
 pub enum Val {
     #[serde(rename="Address")]
-    ValAddress(Box<models::ValAddress>),
+    ValAddress(String),
     #[serde(rename="Array")]
-    ValArray(Box<models::ValArray>),
+    ValArray(Box<Vec<Val>>),
     #[serde(rename="Bool")]
-    ValBool(Box<models::ValBool>),
+    ValBool(bool),
     #[serde(rename="ByteVec")]
-    ValByteVec(Box<models::ValByteVec>),
+    ValByteVec(String),
     #[serde(rename="I256")]
-    ValI256(Box<models::ValI256>),
+    ValI256(String),
     #[serde(rename="U256")]
-    ValU256(Box<models::ValU256>),
+    ValU256(String),
 }
 
 impl Default for Val {

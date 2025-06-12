@@ -15,9 +15,9 @@ use serde::{Deserialize, Serialize};
 #[serde(tag = "type")]
 pub enum PeerStatus {
     #[serde(rename="Banned")]
-    Banned(Box<models::Banned>),
+    Banned(models::Banned),
     #[serde(rename="Penalty")]
-    Penalty(Box<models::Penalty>),
+    Penalty(models::Penalty),
 }
 
 impl Default for PeerStatus {

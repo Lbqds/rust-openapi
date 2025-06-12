@@ -12,12 +12,12 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-#[serde(tag = "type")]
+#[serde(tag = "type", content = "peers")]
 pub enum DiscoveryAction {
     #[serde(rename="Reachable")]
-    Reachable(Box<models::Reachable>),
+    Reachable(Vec<String>),
     #[serde(rename="Unreachable")]
-    Unreachable(Box<models::Unreachable>),
+    Unreachable(Vec<String>),
 }
 
 impl Default for DiscoveryAction {

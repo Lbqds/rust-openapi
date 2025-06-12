@@ -17,14 +17,14 @@ pub enum TxStatus {
     #[serde(rename="Confirmed")]
     Confirmed(Box<models::Confirmed>),
     #[serde(rename="MemPooled")]
-    MemPooled(Box<models::MemPooled>),
+    MemPooled,
     #[serde(rename="TxNotFound")]
-    TxNotFound(Box<models::TxNotFound>),
+    TxNotFound,
 }
 
 impl Default for TxStatus {
     fn default() -> Self {
-        Self::TxNotFound(Default::default())
+        Self::TxNotFound
     }
 }
 
