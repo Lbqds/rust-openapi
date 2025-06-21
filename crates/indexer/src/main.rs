@@ -1,3 +1,4 @@
+mod handler;
 mod ws;
 pub use ws::*;
 
